@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-inter: "Inter", sans-serif;
+    --text-title: 700 1.5rem/2 var(--font-inter);
+    --text-label: 600 1rem/1.25 var(--font-inter);
+    --text: 500 1rem/1.25 var(--font-inter);
+    --text-link: .875rem/1 var(--font-inter);
+
+    --bg-primary: #F4F5FB;
+    --bg-secondary: #FFFFFF;
+    --color-brand: #CA3884;
+    --color-brand-hover: #A52C6B;
+    --color-danger: #C93847;
+
+    --content-primary: #080B12;
+    --content-secondary: #374151;
+    --content-tertiary: #9CA3AF;
+
+    --border-primary: #D1D5DB;
+    --border-hover: #B9C2D0;
+    
+}
+
+body {
+    background-color: var(--bg-primary);
+}
+
+a {
+    text-decoration: none;
+    font: var(--text-link);
+}
+
+#ap {
+    max-width: 24.375em;
+    width: 100%;
+    margin-inline: auto;
+    padding: 1.56rem 2rem;
+
+    header {
+        margin-bottom: 2.75rem;
+
+        .desktop-only {
+            display: none;
+        }
+    
+        .link {
+            display: flex;
+            align-items: center;
+
+            svg {
+                width: .875rem;
+                fill: var(--color-brand);
+                color: var(--color-brand);
+            }
+            span {
+                color: var(--color-brand);
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        h1 {
+            font: var(--text-title);
+        }
+
+    }
+
+    main {
+        margin-bottom: 2.5rem;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            input {
+                width: 100%;
+                font: 400 1rem/1.4 var(--font-inter);
+                padding: 0.68rem 1.125rem;
+                background-color: var(--bg-secondary);
+                border: 2px solid;
+                border-color: var(--border-primary);
+                border-radius: 12px;
+                outline: none;
+
+                &::placeholder {
+                    color: var(--content-tertiary);
+                }
+
+                &:focus, &:focus-visible, &:focus-within{
+                    border-color: var(--color-brand);
+                }
+            }
+
+            button {
+                background-color: var(--color-brand);
+                border: none;
+                border-radius: 12px;
+                padding: 0.75rem 1.5rem;
+                font: var(--text);
+                color: var(--bg-secondary);
+                outline: none;
+
+                &:focus, &:focus-visible, &:focus-within{
+                    border-color: var(--color-brand);
+                }
+
+                &:hover {
+                    background-color: var(--color-brand-hover);
+                }
+
+            }
+        }
+    }
+
+    .list-task {
+        width: 100%;
+        list-style: none;
+
+        .task {
+            width: 100%;
+            display: flex;
+            gap: .75rem;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--bg-secondary);
+            padding: .5rem .75rem;
+            border-radius: 12px;
+            font: var(--text);
+            margin-bottom: .75rem;
+
+            .task-container {
+                display: flex;
+                align-items: center;
+                gap: .75rem;
+            }
+        }
+    }
+
+    .removeItem {
+        display: flex;
+        gap: .75rem;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--color-danger);
+        padding: .75rem;
+        border-radius: 12px;
+        opacity: 0;
+        transition: opacity 0.5s;
+
+        div:nth-child(1) {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+
+            span {
+                font: var(--text-label);
+                color: var(--bg-secondary);
+            }
+        }
+    }
+
+    .opacity-off {
+        opacity: 1;
+    }
+
+}
+
+
+
+
+@media (width > 64em) {
+    #ap {
+        max-width: 64em;
+        width: 100%;
+        display: grid;
+        place-items: center;
+
+        header {
+            width: 39.18rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .desktop-only {
+                display: block;
+                width: 9.71rem;
+                padding-bottom: 3.87rem;
+            }
+
+            .link {
+                align-self: flex-start;
+            }
+
+            h1 {
+                align-self: flex-start;
+            }
+        }
+
+        main {
+            width: 39.18rem;
+
+            form {
+                display: flex;
+                flex-direction: row;
+
+                input {
+                    width: 28.18rem;
+                }
+
+                button {
+                    width: 10rem;
+                }
+            }
+        }
+
+        .list-task {
+            width: 39.18rem;
+        }
+
+        .removeItem {
+            width: 39.18rem;
+        }
+        
+        
+
+
+    } 
+}
+
